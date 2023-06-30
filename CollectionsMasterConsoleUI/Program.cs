@@ -42,7 +42,7 @@ namespace CollectionsMasterConsoleUI
             NumberPrinter(myArray);
 
             Console.WriteLine("---------REVERSE CUSTOM------------");
-            //ReverseArray(myArray);
+            ReverseArray(myArray);
             
 
             Console.WriteLine("-------------------");
@@ -152,12 +152,11 @@ namespace CollectionsMasterConsoleUI
             {
                 if (item == searchNumber)
                 {
+                    foundNumber = true;
                     Console.WriteLine($"{searchNumber} is in the list");
+                    break;
                 }
-                else
-                {
-                    Console.WriteLine($"{searchNumber} is not in the list");
-                }
+              
             }
             if (foundNumber == false)
             {
@@ -195,10 +194,11 @@ namespace CollectionsMasterConsoleUI
         private static void ReverseArray(int[] array)
         {
             int[] newArray = new int[array.Length];
+            int index= 0;
             for (int i = array.Length - 1; i >= 0; i--)
             {
-                newArray[i] = array[i];
-                i++;
+                newArray[index] = array[i];
+                index++;
             }
             NumberPrinter(newArray);
         }
